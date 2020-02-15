@@ -41,7 +41,7 @@
 		455B1F1D23F525EF00E2C1EE = {
 			isa = PBXGroup;
 			children = (
-				455B1F2823F525EF00E2C1EE /* first_c */,
+				455B1F2823F525EF00E2C1EE /* example_1 */,
 				455B1F2723F525EF00E2C1EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		455B1F2823F525EF00E2C1EE /* first_c */ = {
+		455B1F2823F525EF00E2C1EE /* example_1 */ = {
 			isa = PBXGroup;
 			children = (
 				455B1F2923F525EF00E2C1EE /* main.cpp */,
 			);
-			path = first_c;
+			path = example_1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +239,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7G4VLT3P6S;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -249,7 +249,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7G4VLT3P6S;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
