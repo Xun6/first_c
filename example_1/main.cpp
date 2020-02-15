@@ -15,7 +15,7 @@
 //}
 
 
-/*例题：输入两个正整数 m 和 n ，求其最大公约数和最小公倍数*/
+/**例题：输入两个正整数 m 和 n ，求其最大公约数和最小公倍数*/
 
 //#include <stdio.h>
 //
@@ -45,34 +45,65 @@
 
 
 
-/*例题：输入一行字符，分别统计出其中英文字母、空格、数字、其他字符的个数*/
+/**例题：输入一行字符，分别统计出其中英文字母、空格、数字、其他字符的个数*/
+//#include <stdio.h>
+//
+//int main()
+//{
+//    int letter=0,digital=0,space=0,other=0;
+//    char c;
+//    printf("请输入一串字符：\n");
+//    while((c=getchar())!='\n')
+//    {
+//        if((c>='A' && c<='Z') || (c>='a' && c<='z'))
+//        {
+//            letter++;
+//        }
+//        else if(c==' ')
+//        {
+//            space++;
+//        }
+//        else if(c>='0'&&c<='9')
+//        {
+//            digital++;
+//        }
+//        else
+//        {
+//            other++;
+//        }
+//    }
+//    printf("字母数：%d\n数字数：%d\n空格数：%d\n其他：%d\n",letter,digital,space,other);
+//    return 0;
+//}
+//
+
+
+
+
+/**例题 5*/
 #include <stdio.h>
+#include <math.h>
 
 int main()
 {
-    int letter=0,digital=0,space=0,other=0;
-    char c;
-    printf("请输入一串字符：\n");
-    while((c=getchar())!='\n')
+    int S=0;
+    int x=1,n,i,a,a1=0,a2 = 0;
+    printf("请输入位数‘a’和‘n’的值：\n");
+    scanf("%d,%d",&a,&n);
+    i = n;
+    while(x<=n)
     {
-        if((c>='A' && c<='Z') || (c>='a' && c<='z'))
+        if(i < 1)
         {
-            letter++;
+            break;
         }
-        else if(c==' ')
-        {
-            space++;
-        }
-        else if(c>='0'&&c<='9')
-        {
-            digital++;
-        }
-        else
-        {
-            other++;
-        }
+        a2 = pow(10,n-i)* a + a1;
+        S = S + a2;
+        a1 = a2;
+        x++;
+        i--;
     }
-    printf("字母数：%d\n数字数：%d\n空格数：%d\n其他：%d\n",letter,digital,space,other);
+    printf("输出最后一位数值：%d\n",a2);
+    printf("输出各数相加总和是：%d\n",S);
     return 0;
 }
-
