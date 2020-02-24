@@ -241,22 +241,91 @@
 
 
 /**练习题 13*/
+//#include <stdio.h>
+//#include <math.h>
+//
+//int main()
+//{
+//    float x0,x1,a;
+//    printf("输入一个x的值： ");
+//    scanf("%f",&a);
+//    x0 =a;       //假设一个初始值 x0，再求出 x1,再循环迭代求出满足条件的根
+//    x1 =(x0 +a/x0) /2;
+//    while(fabs(x1 -x0) >=1e-5)
+//    {
+//        x0 =x1;
+//        x1 =(x0 +a/x0) /2;
+//    }
+//    printf("该输入值 %3.2f 的根是：%7.5f\n",a,x1);
+//    return 0;
+//}
+
+
+
+
+
+/**练习题 16*/
+//#include <stdio.h>
+//
+//int main()
+//{
+//    int i,j,k,h;
+//    for(k =1; k <=4; k++)  //外循环上层的 *的行数
+//    {
+//        for(j =1; j<=4-k; j++)   //循环输出 前面的空格数
+//        {
+//            printf(" ");
+//        }
+//        for(i =1; i <=2*k-1; i++)   //循环输出 * 数
+//        {
+//            printf("*");
+//        }
+//        printf("\n");     //空一行
+//    }
+//    for(h =3,k =1; k <=3; k++,h--)    //下层 *的行数 循环
+//      {
+//          for(j =1; j<=k; j++)
+//          {
+//              printf(" ");
+//          }
+//          for(i =1; i <=2*h-1; i++)
+//          {
+//              printf("*");
+//          }
+//          printf("\n");
+//      }
+//    return 0;
+//}
+
+
+
+
+/**练习题 17*/
 #include <stdio.h>
-#include <math.h>
 
 int main()
 {
-    float x0,x1,a;
-    printf("输入一个x的值： ");
-    scanf("%f",&a);
-    x0 =a;       //假设一个初始值 x0，再求出 x1,再循环迭代求出满足条件的根
-    x1 =(x0 +a/x0) /2;
-    while(fabs(x1 -x0) >=1e-5)
+    char i,j,k;     //假设A--i,B--j,C--k
+    for(i ='X'; i <='Z'; i++)   //循环取 i的值
     {
-        x0 =x1;
-        x1 =(x0 +a/x0) /2;
+        for(j ='X'; j <='Z'; j++)   //循环取 j的值
+        {
+            if(i!=j)   //判断 i不等于 j
+            {
+                for(k ='X'; k <='Z'; k++)
+                {
+                    if(k!=i && k!=j)   //判断满足  i 不等于 j 不等于 k
+                    {
+                        if(i!='X' && k!='X' && k!='Z')  //根据条件 判断i 不与x组队，k 不与 x和z组队
+                        {
+                            printf("两只球队的组队名单为：\n");
+                            printf("A--%c\nB--%c\nC--%c\n",i,j,k);
+                        }
+                    }
+                }
+            }
+        }
     }
-    printf("该输入值 %3.2f 的根是：%7.5f\n",a,x1);
 }
 
 
