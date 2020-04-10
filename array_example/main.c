@@ -111,57 +111,57 @@
 
 
 /**统计输入字符  单词数*/     //关键：判断空格出现
-//#include <stdio.h>
-////#include <string.h>
-//
-//int main()
-//{
-//    char string[30];      //定义一个字符数组
-//    int i,num =0,word =0;
-//    char c;
-//    gets(string);       //输入一个字符串给字符数组 string
-//    for(i =0; (c=string[i])!='\0'; i++)      //将字符数组中一个字符string[i],赋值给字符变量 c，且判断不为‘\0’时继续循环
-//    {
-//        if(c==' ')
-//        {
-//            word =0;     //判断字符为空格时，使 word 置0
-//        }else if(word ==0)   //判断字符不是空格时，且word为0，将word 置 1，并记录一个新单词
-//        {
-//            word =1;
-//            num++;
-//        }
-//    }
-//    printf("单词统计次数：%d\n",num);
-//    return 0;
-//}
+#include <stdio.h>
+//#include <string.h>
+
+int main()
+{
+    char string[30];      //定义一个字符数组
+    int i,num =0,word =0;
+    char c;
+    gets(string);       //输入一个字符串给字符数组 string
+    for(i =0; (c=string[i])!='\0'; i++)      //将字符数组中一个字符string[i],赋值给字符变量 c，且判断不为‘\0’时继续循环
+    {
+        if(c==' ')
+        {
+            word =0;     //判断字符为空格时，使 word 置0
+        }else if(word ==0)   //判断字符不是空格时，且word为0，将word 置 1，并记录一个新单词
+        {
+            word =1;
+            num++;
+        }
+    }
+    printf("单词统计次数：%d\n",num);
+    return 0;
+}
 
 
 
 
 /**例题：有 3 个字符串，要求找出其中最大者*/
-#include <stdio.h>
-#include <string.h>  //使用字符串处理函数时，需要加上 此头文件
-int main()
-{
-    char str[3][20];     //定义一个二维数组（看作是三个一维字符数组str[i],便于下面循环赋值）
-    char string[20];
-    int i;
-    for(i =0; i <3; i++)
-    {
-        gets(str[i]);          //循环给字符数组 str[i] 赋值
-    }
-    if(strcmp(str[0],str[1]) >0)   //判断比较str[0] 和 str[1] 中的最大值，并把最大值复制给 string数组
-    {
-        strcpy(string,str[0]);
-    }
-    else
-    {
-        strcpy(string,str[1]);
-    }
-    if(strcmp(string, str[2]) <0)
-    {
-        strcpy(string, str[2]);      //把 str[2]字符串 赋给 字符数组string
-    }
-    printf("\nthe largest string is: %s\n",string);    //输出 string
-    return 0;
-}
+//#include <stdio.h>
+//#include <string.h>  //使用字符串处理函数时，需要加上 此头文件
+//int main()
+//{
+//    char str[3][20];     //定义一个二维数组（看作是三个一维字符数组str[i],便于下面循环赋值）
+//    char string[20];
+//    int i;
+//    for(i =0; i <3; i++)
+//    {
+//        gets(str[i]);          //循环给字符数组 str[i] 赋值
+//    }
+//    if(strcmp(str[0],str[1]) >0)   //判断比较str[0] 和 str[1] 中的最大值，并把最大值复制给 string数组
+//    {
+//        strcpy(string,str[0]);
+//    }
+//    else
+//    {
+//        strcpy(string,str[1]);
+//    }
+//    if(strcmp(string, str[2]) <0)
+//    {
+//        strcpy(string, str[2]);      //把 str[2]字符串 赋给 字符数组string
+//    }
+//    printf("\nthe largest string is: %s\n",string);    //输出 string
+//    return 0;
+//}
