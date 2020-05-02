@@ -91,26 +91,73 @@
 
 
 /**习题  3*/
+//#include <stdio.h>
+//
+//int main()
+//{
+//    int a[3][3] ={{1,2,3},{},{}};
+//    int i,j;
+//    int num=0;
+//    for(i =0; i<3; i++)
+//    {
+//        for(j =0; j<3; j++)
+//        {
+//            if(i==1 || j==1)
+//            {
+//                continue;
+//            }else{
+//                num =num + a[i][j];
+//            }
+//        }
+//    }
+//    printf("%d\n",num);
+//    return 0;
+//}
+
+
+/**习题 4*/
 #include <stdio.h>
 
 int main()
 {
-    int a[3][3] ={{1,2,3},{},{}};
-    int i,j;
-    int num=0;
-    for(i =0; i<3; i++)
+    int a[11] = {1,2,4,5,7,8,12,24,35,88};
+    int tamp1,temp2,num,i,j;
+    printf("初始数组元素：\n");
+    for(i=0 ;i<10; i++)
     {
-        for(j =0; j<3; j++)
+        printf("%d\t",a[i]);
+    }
+    printf("\n");
+    printf("插入一个数：");
+    scanf("%d",&num);
+    if(num > a[9])
+    {
+        a[10] = num;
+    }
+    else
+    {
+        for(i =0; i<10; i++)
         {
-            if(i==1 || j==1)
+            if(a[i] > num)
             {
-                continue;
-            }else{
-                num =num + a[i][j];
+                tamp1 = a[i];
+                a[i] = num;
+                for(j =i+1; j < 11; j++ )
+                {
+                    temp2 = a[j];
+                    a[j] = tamp1;
+                    tamp1 = temp2;
+                }
+                break;   //第一次执行完里面的 for循环后，跳出外层循环不再执行
             }
         }
     }
-    printf("%d\n",num);
+    printf("最终的排序：\n");
+    for(i =0; i<11; i++)
+    {
+        printf("%d\t",a[i]);
+    }
+    printf("\n");
     return 0;
 }
 
