@@ -116,48 +116,111 @@
 
 
 /**习题 4*/
+//#include <stdio.h>
+//
+//int main()
+//{
+//    int a[11] = {1,2,4,5,7,8,12,24,35,88};
+//    int tamp1,temp2,num,i,j;
+//    printf("初始数组元素：\n");
+//    for(i=0 ;i<10; i++)
+//    {
+//        printf("%d\t",a[i]);
+//    }
+//    printf("\n");
+//    printf("插入一个数：");
+//    scanf("%d",&num);
+//    if(num > a[9])
+//    {
+//        a[10] = num;
+//    }
+//    else
+//    {
+//        for(i =0; i<10; i++)
+//        {
+//            if(a[i] > num)
+//            {
+//                tamp1 = a[i];
+//                a[i] = num;
+//                for(j =i+1; j < 11; j++ )
+//                {
+//                    temp2 = a[j];
+//                    a[j] = tamp1;
+//                    tamp1 = temp2;
+//                }
+//                break;   //第一次执行完里面的 for循环后，跳出外层循环不再执行
+//            }
+//        }
+//    }
+//    printf("最终的排序：\n");
+//    for(i =0; i<11; i++)
+//    {
+//        printf("%d\t",a[i]);
+//    }
+//    printf("\n");
+//    return 0;
+//}
+
+
+
+/**习题 5*/
+//#include <stdio.h>
+
+//int main()
+//{
+//    int i,temp;
+//    int s[6]={1,2,4,5,6,8};
+//    printf("初始数组为：\n");
+//    for(i = 0;i<6; i++)
+//    {
+//        printf("%d\t",s[i]);
+//    }
+//    printf("\n");
+//    printf("转换后的数组为：\n");
+//    for(i =0; i<6/2; i++)
+//    {
+//        temp = s[i];
+//        s[i] = s[6-i-1];
+//        s[6-i-1] = temp;
+//    }
+//    for(i = 0; i<6; i++)
+//    {
+//        printf("%d\t",s[i]);
+//    }
+//    printf("\n");
+//    return 0;
+//
+//}
+
+
+
+
+/**习题 6  ：杨辉三角形*/
 #include <stdio.h>
+#define N 10
+#define M 20
 
 int main()
 {
-    int a[11] = {1,2,4,5,7,8,12,24,35,88};
-    int tamp1,temp2,num,i,j;
-    printf("初始数组元素：\n");
-    for(i=0 ;i<10; i++)
+    int i,j;
+    int a[N][M];
+    for(i =0 ; i<10; i++)
     {
-        printf("%d\t",a[i]);
-    }
-    printf("\n");
-    printf("插入一个数：");
-    scanf("%d",&num);
-    if(num > a[9])
-    {
-        a[10] = num;
-    }
-    else
-    {
-        for(i =0; i<10; i++)
+        for(j= 0; j<=i;j++)
         {
-            if(a[i] > num)
+            if(j==0||i==j)
             {
-                tamp1 = a[i];
-                a[i] = num;
-                for(j =i+1; j < 11; j++ )
-                {
-                    temp2 = a[j];
-                    a[j] = tamp1;
-                    tamp1 = temp2;
-                }
-                break;   //第一次执行完里面的 for循环后，跳出外层循环不再执行
+                a[i][j] = 1;
+            }else
+            {
+              a[i][j] = a[i-1][j-1] + a[i-1][j];
             }
+            printf("%d\t",a[i][j]);
         }
+        printf("\n");
     }
-    printf("最终的排序：\n");
-    for(i =0; i<11; i++)
-    {
-        printf("%d\t",a[i]);
-    }
-    printf("\n");
     return 0;
+    
+    
 }
 
