@@ -196,31 +196,102 @@
 
 
 /**习题 6  ：杨辉三角形*/
-#include <stdio.h>
-#define N 10
-#define M 20
+//#include <stdio.h>
+//#define N 10
+//#define M 20
+//
+//int main()
+//{
+//    int i,j;
+//    int a[N][M];
+//    for(i =0 ; i<10; i++)
+//    {
+//        for(j= 0; j<=i;j++)
+//        {
+//            if(j==0||i==j)
+//            {
+//                a[i][j] = 1;
+//            }else
+//            {
+//              a[i][j] = a[i-1][j-1] + a[i-1][j];
+//            }
+//            printf("%d\t",a[i][j]);
+//        }
+//        printf("\n");
+//    }
+//    return 0;
+//
+//
+//}
 
+
+
+/**练习题 7，求魔方阵，好难🤯*/
+
+#include <stdio.h>
 int main()
 {
-    int i,j;
-    int a[N][M];
-    for(i =0 ; i<10; i++)
+    int a[15][15],i,j,k,p,n;
+    p = 1;
+    while(p==1)
     {
-        for(j= 0; j<=i;j++)
+        printf("enter n(n = 1 ~ 15): ");
+        scanf("%d",&n);
+        if((n!=0) && (n<=15) && (n%2!=0))
         {
-            if(j==0||i==j)
+            p = 0;
+        }
+    }
+    //初始化
+    for(i = 1; i <= n; i++)
+    {
+        for(j = 1; j<= n; j++)
+        {
+            a[i][j] = 0;
+        }
+    }
+    //建立f魔方阵
+    j = n/2 +1;
+    a[1][j] = 1;
+    for(k =2; k<=n * n; k++)
+    {
+        i =i - 1;
+        j = j+1;
+        if((i<1) && (j>n))
+        {
+            i = i+2;
+            j = j-1;
+        }
+        else
+        {
+            if(i<1)
             {
-                a[i][j] = 1;
-            }else
-            {
-              a[i][j] = a[i-1][j-1] + a[i-1][j];
+                i=n;
             }
-            printf("%d\t",a[i][j]);
+            if(j>n)
+            {
+                j=1;
+            }
+        }
+        if(a[i][j]==0)
+        {
+            a[i][j] = k;
+        }
+        else
+        {
+            i = i+2;
+            j = j-1;
+            a[i][j] = k;
+        }
+    }
+    //输出魔方阵
+    for(i =1; i<=n; i++)
+    {
+        for(j =1; j<=n; j++)
+        {
+            printf("%5d",a[i][j]);
         }
         printf("\n");
     }
     return 0;
-    
-    
 }
-
